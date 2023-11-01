@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    List
+{% endblock %}
+
+{% block main %}
+    <form action="/Listed" method="post">
+        <table class="table">
+            <thead>
+              <tr>
+                <td scope="col" style="text-align:center;font-size:30px">{{ title }} overview</td>
+                <td scope="col" style="text-align:center;font-size:30px">{{ title }} genres</td>
+                <td scope="col" style="text-align:center;font-size:30px">{{ title }} poster</td>
+              </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td style="width:25%;overflow:auto;text-align:center;font-size:25px">{{ overview }}</td>
+                        <td style="width:25%;text-align:center;font-size:25px">{{ genre }}</td>
+                        <td style="height:100%;width:50%;padding:100px"><img src="{{ image }}" width="100%" height="100%" style="border-radius:7px;width:50%;text-align:center"></img></td>
+                    </tr>
+            </tbody>
+          </table>
+          <div class="mb-3" style="">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="movie_rating" placeholder="Rating[0-10]" type="number">
+          </div>
+        <button class="btn btn-primary" type="submit">Add to list</button>
+    </form>
+{% endblock %}
+

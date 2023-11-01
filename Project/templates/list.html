@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    List
+{% endblock %}
+
+{% block main %}
+    <form action="/List" method="post">
+        <div class="mb-3" style="">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="movie_name" placeholder="Insert movie name" type="text">
+        </div>
+        <button class="btn btn-primary" href="listed.html" type="submit">Search</button>
+    </form>
+{% endblock %}

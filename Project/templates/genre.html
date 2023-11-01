@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    List
+{% endblock %}
+
+{% block main %}
+    <form action="/genre" method="get">
+        <table class="table">
+            <thead>
+              <tr>
+                <td scope="col" style="text-align:center;font-size:30px">Genres you most enjoy according to your movie list:</td>
+              </tr>
+            </thead>
+            <tbody>
+                {% for genre in genres %}
+                    <tr>
+                        <td style="width:25%;overflow:auto;text-align:center;font-size:25px">{{ genre.genre_name }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </form>
+{% endblock %}

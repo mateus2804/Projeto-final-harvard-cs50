@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    List
+{% endblock %}
+
+{% block main %}
+        <form action="/" method="get">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td scope="col" style="text-align:center;font-size:30px">Title</td>
+                    <td scope="col" style="text-align:center;font-size:30px">Overview</td>
+                    <td scope="col" style="text-align:center;font-size:30px">genres</td>
+                    <td scope="col" style="text-align:center;font-size:30px">Rating</td>
+                    <td scope="col" style="text-align:center;font-size:30px;width:35%">poster</td>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for movie in favorite_movies %}
+                        <tr>
+                            <td style="text-align:center;font-size:25px">{{ movie.movie_name }}</td>
+                            <td style="overflow:auto;text-align:center;font-size:25px">{{ movie.movie_overview }}</td>
+                            <td style="text-align:center;font-size:25px">{{ movie.genres }}</td>
+                            <td style="text-align:center;font-size:25px">{{ movie.rating }}/10</td>
+                            <td style="height:100%;width:35%;padding:100px"><img src="{{ movie.image_url }}" width="100%" height="100%" style="border-radius:7px;width:50%;text-align:center"></img></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+{% endblock %}
